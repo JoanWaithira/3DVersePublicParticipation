@@ -138,7 +138,9 @@
       <div class="tok-code" id="tok-display">AAD-001-XXXX-XXXX</div>
       <div class="tok-qr" id="qr-wrap"></div>
       <p class="tok-note">Scan this QR code at any time to view your agreement or withdraw consent.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small></p>
-      <div class="wallet-ph">📱 Add to Apple Wallet / Google Wallet — <em>placeholder, Phase 2</em></div>
+      <div class="tok-wallet-actions">
+        <button type="button" class="btn btn-wallet" id="token-wallet-btn" onclick="openWalletModal('token')">Add to Apple Wallet</button>
+      </div>
     </div>
     <div class="btn-row">
       <button class="btn btn-s btn-ol" onclick="window.print()">🖨 Print token</button>
@@ -316,7 +318,7 @@
     <div class="btn-row receipt-actions">
       <button class="btn btn-ol" id="receipt-print-btn" onclick="window.print()">↓ Download / Print Receipt (PDF)</button>
       <button class="btn btn-s" id="receipt-email-btn" type="button" onclick="openEmailReceipt()">✉ Email receipt</button>
-      <button class="btn btn-wallet" id="receipt-wallet-btn" type="button" onclick="openWalletModal()">Add to Apple Wallet</button>
+      <button class="btn btn-wallet" id="receipt-wallet-btn" type="button" onclick="openWalletModal('receipt')">Add to Apple Wallet</button>
       <button class="btn btn-ag" id="receipt-survey-btn" onclick="goSurvey()">Complete short survey</button>
     </div>
   </div>
@@ -624,6 +626,7 @@
 // ═══════ STATE ═══════
 let tok='', lang='en', pathway='self-serve', trustDone=false;
 let receiptMeta=null;
+let walletCardMode='receipt';
 let i18nReady=false;
 const sOrder=['s-landing','s-notice','s-trust','s-token','s-consent','s-sign','s-receipt','s-survey'];
 
@@ -690,7 +693,7 @@ const i18nBindings=[
   {selector:'#s-token .card-lead',en:'This is your participation reference code. It does not contain your name or any personal details. Keep it safe as you will need it to view your receipt or to withdraw your agreement.',nl:'Dit is uw deelname-referentiecode. Het bevat geen naam of andere persoonlijke gegevens. Bewaar het goed, want u heeft het nodig om uw ontvangstbewijs te bekijken of uw akkoord in te trekken.'},
   {selector:'#s-token .tok-lbl',en:'Your Participation Code',nl:'Uw Deelnamecode'},
   {selector:'#s-token .tok-note',html:true,en:'Scan this QR code at any time to view your agreement or withdraw consent.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small>',nl:'Scan deze QR-code op elk moment om uw akkoord te bekijken of toestemming in te trekken.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small>'},
-  {selector:'#s-token .wallet-ph',html:true,en:'Add to Apple Wallet / Google Wallet - <em>placeholder, Phase 2</em>',nl:'Toevoegen aan Apple Wallet / Google Wallet - <em>placeholder, Fase 2</em>'},
+  {selector:'#token-wallet-btn',en:'Add to Apple Wallet',nl:'Voeg toe aan Apple Wallet'},
   {selector:'#s-token .btn-s.btn-ol',en:'Print token',nl:'Token afdrukken'},
   {selector:'#s-token .btn-p',en:'Saved - continue',nl:'Opgeslagen - ga verder'},
 
@@ -1285,7 +1288,20 @@ function doEmailReceipt(){
 }
 
 // ═══════ WALLET CARD ═══════
-function openWalletModal(){
+function openWalletModal(mode){
+  walletCardMode=mode||'receipt';
+  const lead=document.querySelector('#modal-wallet .modal-lead');
+  if(lead){
+    if(walletCardMode==='token'){
+      lead.textContent=lang==='nl'
+        ? 'Uw deelname-referentiekaart — bewaar hem op uw apparaat. In productie kan dit direct naar Apple Wallet met een ondertekend .pkpass-bestand gaan.'
+        : 'Your participation reference card — save it to your device. In production this could open Apple Wallet directly with a signed .pkpass file.';
+    }else{
+      lead.textContent=lang==='nl'
+        ? 'Uw deelnamepas — bewaar hem op uw apparaat. In een live versie zou dit direct naar Apple Wallet kunnen openen.'
+        : 'Your participation pass card — save it to your device. In a deployed version this would open directly in Apple Wallet.';
+    }
+  }
   openModal('modal-wallet');
   setTimeout(renderWalletCard,120);
 }
@@ -1330,10 +1346,12 @@ function renderWalletCard(){
   ctx.strokeStyle='rgba(255,255,255,0.14)'; ctx.lineWidth=1;
   ctx.beginPath(); ctx.moveTo(36,62); ctx.lineTo(W-226,62); ctx.stroke();
 
+  const tokenMode=walletCardMode==='token';
+
   // Title
   ctx.fillStyle='#ffffff';
   ctx.font='300 27px Georgia,"DM Serif Display",serif';
-  ctx.fillText('Participation Receipt',36,96);
+  ctx.fillText(tokenMode?'Participation reference':'Participation Receipt',36,96);
 
   // Reference code label
   ctx.fillStyle='rgba(255,255,255,0.5)';
@@ -1345,28 +1363,41 @@ function renderWalletCard(){
   ctx.font='700 26px "DM Serif Display",Georgia,monospace';
   ctx.fillText(tok||'AAD-001-XXXX-XXXX',36,164);
 
-  // Date agreed
-  const date=receiptMeta?receiptMeta.date:new Date().toISOString().split('T')[0];
-  const time=receiptMeta?receiptMeta.time:'';
-  ctx.fillStyle='rgba(255,255,255,0.5)';
-  ctx.font='700 12px system-ui,-apple-system,sans-serif';
-  ctx.fillText('DATE AGREED',36,204);
-  ctx.fillStyle='#ffffff';
-  ctx.font='500 17px system-ui,-apple-system,sans-serif';
-  ctx.fillText(date+(time?'  '+time+' UTC':''),36,226);
-
-  // Receipt ID
-  const rid=(document.getElementById('r-id')||{}).textContent||'3DX-AAD-2026-XXXXXX';
-  ctx.fillStyle='rgba(255,255,255,0.32)';
-  ctx.font='400 12px system-ui,-apple-system,sans-serif';
-  ctx.fillText('Receipt: '+rid,36,266);
-
-  // Bottom strip
-  ctx.fillStyle='rgba(0,0,0,0.22)';
-  ctx.fillRect(0,H-50,W,50);
-  ctx.fillStyle='rgba(255,255,255,0.45)';
-  ctx.font='400 12px system-ui,-apple-system,sans-serif';
-  ctx.fillText('Withdraw: privacy@3dxverse.eu  ·  ctregistry.3dxverse.eu/withdraw',36,H-20);
+  if(tokenMode){
+    const issued=new Date().toLocaleDateString(lang==='nl'?'nl-NL':'en-GB',{year:'numeric',month:'short',day:'numeric'});
+    ctx.fillStyle='rgba(255,255,255,0.5)';
+    ctx.font='700 12px system-ui,-apple-system,sans-serif';
+    ctx.fillText(lang==='nl'?'DATUM TOKEN':'TOKEN DATE',36,204);
+    ctx.fillStyle='#ffffff';
+    ctx.font='500 17px system-ui,-apple-system,sans-serif';
+    ctx.fillText(issued,36,226);
+    ctx.fillStyle='rgba(255,255,255,0.32)';
+    ctx.font='400 12px system-ui,-apple-system,sans-serif';
+    ctx.fillText(lang==='nl'?'Nog geen akkoord · scan QR om later te openen.':'No agreement logged yet · scan QR to open later.',36,266);
+    ctx.fillStyle='rgba(0,0,0,0.22)';
+    ctx.fillRect(0,H-50,W,50);
+    ctx.fillStyle='rgba(255,255,255,0.45)';
+    ctx.font='400 11px system-ui,-apple-system,sans-serif';
+    ctx.fillText('privacy@3dxverse.eu  ·  ctregistry.3dxverse.eu/retrieve/'+(tok||'XXXX'),36,H-20);
+  }else{
+    const date=receiptMeta?receiptMeta.date:new Date().toISOString().split('T')[0];
+    const time=receiptMeta?receiptMeta.time:'';
+    ctx.fillStyle='rgba(255,255,255,0.5)';
+    ctx.font='700 12px system-ui,-apple-system,sans-serif';
+    ctx.fillText('DATE AGREED',36,204);
+    ctx.fillStyle='#ffffff';
+    ctx.font='500 17px system-ui,-apple-system,sans-serif';
+    ctx.fillText(date+(time?'  '+time+' UTC':''),36,226);
+    const rid=(document.getElementById('r-id')||{}).textContent||'3DX-AAD-2026-XXXXXX';
+    ctx.fillStyle='rgba(255,255,255,0.32)';
+    ctx.font='400 12px system-ui,-apple-system,sans-serif';
+    ctx.fillText('Receipt: '+rid,36,266);
+    ctx.fillStyle='rgba(0,0,0,0.22)';
+    ctx.fillRect(0,H-50,W,50);
+    ctx.fillStyle='rgba(255,255,255,0.45)';
+    ctx.font='400 12px system-ui,-apple-system,sans-serif';
+    ctx.fillText('Withdraw: privacy@3dxverse.eu  ·  ctregistry.3dxverse.eu/withdraw',36,H-20);
+  }
 
   // QR code (right column)
   const QX=W-190,QY=68,QW=154,QH=154;
@@ -1381,7 +1412,7 @@ function renderWalletCard(){
   }
   ctx.fillStyle='rgba(255,255,255,0.42)';
   ctx.font='400 11px system-ui,-apple-system,sans-serif';
-  ctx.textAlign='center'; ctx.fillText('Scan to verify',QX+QW/2,QY+QH+18); ctx.textAlign='left';
+  ctx.textAlign='center'; ctx.fillText(tokenMode?'Scan to retrieve':'Scan to verify',QX+QW/2,QY+QH+18); ctx.textAlign='left';
 
   // EU badge
   ctx.fillStyle='rgba(255,255,255,0.09)';
@@ -1402,7 +1433,7 @@ function downloadWalletCard(){
   if(!canvas||canvas.width===0) return;
   const a=document.createElement('a');
   a.href=canvas.toDataURL('image/png');
-  a.download='3DxVERSE-Pass-'+(tok||'receipt')+'.png';
+  a.download=(walletCardMode==='token'?'3DxVERSE-Ref-':'3DxVERSE-Pass-')+(tok||'receipt')+'.png';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
