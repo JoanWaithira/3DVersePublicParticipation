@@ -10,8 +10,8 @@
 
 <header class="hdr">
   <div class="hdr-logo">
-    <div class="hdr-mark">3D</div>
-    <div><div class="hdr-name">3DxVERSE</div><div class="hdr-sub">Aadorp Local Digital Twin</div></div>
+    <img src="images/3D%20Verse%20logo.jpeg" alt="3DxVERSE" class="hdr-brand">
+    <img src="images/Co-funded.jpeg" alt="Co-funded by the European Union" class="hdr-eu">
   </div>
   <div class="hdr-right">
     <button class="lang-btn active" id="btn-selfserve" onclick="setPathway('self-serve')">SELF</button>
@@ -110,41 +110,14 @@
     <div class="te"><div class="te-lbl" id="trust-lbl-3">3 — Purpose in plain language</div><div class="te-txt" id="trust-txt-3">We want to use data about your home's energy use and your preferences about energy options in Aadorp, including recording your contributions at workshops.</div></div>
     <div class="te"><div class="te-lbl" id="trust-lbl-4">4 — What data is involved</div><div class="te-txt" id="trust-txt-4">Data about your home's energy consumption, your energy preferences, and your workshop contributions. <strong>We do not use your name or contact details.</strong></div></div>
     <div class="te"><div class="te-lbl" id="trust-lbl-5">5 — Your choice</div><div class="te-txt" id="trust-txt-5">You do not have to take part. If you choose not to, you can still view the local digital twin. <strong>There is no penalty for declining.</strong></div></div>
-    <div class="te"><div class="te-lbl" id="trust-lbl-6">6 — Right to withdraw</div><div class="te-txt" id="trust-txt-6">You can withdraw at any time by scanning your QR code and choosing Stop, or by telling a programme worker, or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.</div></div>
+    <div class="te"><div class="te-lbl" id="trust-lbl-6">6 — Right to withdraw</div><div class="te-txt" id="trust-txt-6">You can withdraw at any time by telling a programme worker or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.</div></div>
     <div class="te verified"><div class="te-lbl" id="trust-lbl-7">7 — Verification badge</div><div class="te-txt" id="trust-txt-7"><em>[Placeholder — Trust Framework credential verified. Issued by: 3DxVERSE Programme Board. Status: Active.]</em></div></div>
 
     <div class="scroll-info" id="scroll-info">↓ Scroll down to read all seven elements before confirming</div>
 
     <div class="btn-row">
       <button class="btn btn-s" onclick="go('s-notice')">Back</button>
-      <button class="btn btn-p" id="trust-btn" onclick="go('s-token')">Confirmed — continue</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-  S-03  TOKEN ISSUANCE
-  Format: AAD-001-XXXX-XXXX per CD-12 s5.2
-  AC-03: all three formats present
-═══════════════════════════════════ -->
-<div class="screen" id="s-token">
-  <div class="step-tag"><div class="step-dot"></div>Stage 2 of 4 — Your Participation Code — S-03</div>
-  <div class="card">
-    <div class="fac"><strong>Facilitator cue — S-03</strong>Show the resident their token number. Confirm they can see it clearly. Ask whether they want a printed copy. Remind them to keep it — they will need it to withdraw.</div>
-    <div class="card-title">Your Participation Code</div>
-    <p class="card-lead">This is your participation reference code. It does not contain your name or any personal details. Keep it safe as you will need it to view your receipt or to withdraw your agreement.</p>
-    <div class="tok-box">
-      <div class="tok-lbl">Your Participation Code</div>
-      <div class="tok-code" id="tok-display">AAD-001-XXXX-XXXX</div>
-      <div class="tok-qr" id="qr-wrap"></div>
-      <p class="tok-note">Scan this QR code at any time to view your agreement or withdraw consent.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small></p>
-      <div class="tok-wallet-actions">
-        <button type="button" class="btn btn-wallet" id="token-wallet-btn" onclick="openWalletModal('token')">Add to Apple Wallet</button>
-      </div>
-    </div>
-    <div class="btn-row">
-      <button class="btn btn-s btn-ol" onclick="window.print()">🖨 Print token</button>
-      <button class="btn btn-p" onclick="go('s-consent')">Saved — continue</button>
+      <button class="btn btn-p" id="trust-btn" onclick="go('s-consent')">Confirmed — continue</button>
     </div>
   </div>
 </div>
@@ -171,7 +144,7 @@
         <li>Record and transcribe your contributions at workshops to improve our understanding of what residents want.</li>
       </ul>
       <p class="c-footer">The legal basis for each of these uses is shown in the receipt you will receive. <strong>You do not have to agree.</strong> If you choose not to, you can still view the Aadorp digital twin.</p>
-      <p class="c-footer" style="margin-top:7px">You can withdraw at any time by scanning your QR code or telling a programme worker. We will stop within <strong>3 days</strong>.</p>
+      <p class="c-footer" style="margin-top:7px">You can withdraw at any time by telling a programme worker or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.</p>
     </div>
 
     <div class="proc-panel proc-lite">
@@ -198,13 +171,12 @@
 <div class="screen" id="s-sign">
   <div class="step-tag"><div class="step-dot"></div>Stage 3 of 4 — Confirm &amp; Sign</div>
   <div class="card">
-    <div class="fac"><strong>Facilitator cue — S-04b</strong>Ask the resident to enter the date and sign below. After they sign, confirm the token has been registered.</div>
+    <div class="fac"><strong>Facilitator cue — S-04b</strong>Ask the resident to enter the date and sign below. After they sign, confirm the agreement has been recorded.</div>
     <div class="card-title">Confirm your agreement</div>
     <div class="agreement-doc">
       <div class="agreement-head">Resident Declaration</div>
       <p class="agreement-note">I have read or had explained to me the information above and I understand: why my data is processed; what data may be collected; and that I can withdraw at any time.</p>
       <div class="sig-row">
-        <div class="ff"><label>Participation code</label><input type="text" id="sig-tok" readonly style="background:#f5f5f5;color:var(--muted)"></div>
         <div class="ff"><label>Date</label><input type="date" id="sig-date"></div>
       </div>
       <div class="ff" style="margin-bottom:5px"><label>Signature — sign in the box below</label></div>
@@ -212,7 +184,7 @@
       <div class="sig-wrap"><canvas id="sig-canvas" width="600" height="90"></canvas><span class="sig-hint" id="sig-hint">✏ Sign here</span></div>
       <div class="ff" style="margin-top:14px">
         <button class="btn btn-s" onclick="go('s-consent')">Back</button>
-        <label>Facilitator confirms receipt + token registered</label>
+        <label>Facilitator confirms agreement recorded</label>
         <select id="fac-conf"><option value="">— Select —</option><option value="yes">Yes</option><option value="no">No</option></select>
       </div>
     </div>
@@ -243,15 +215,6 @@
 
   <div class="card" id="receipt-card">
     <div class="card-title" style="margin-bottom:16px">Combined Receipt — <span id="r-id">3DX-AAD-2026-XXXXXX</span></div>
-
-    <div class="receipt-scan">
-      <div>
-        <div class="receipt-scan-label" id="r-scan-title">Scan to retrieve this receipt</div>
-        <div class="receipt-token" id="r-scan-token">AAD-001-XXXX-XXXX</div>
-        <p class="receipt-scan-note" id="r-scan-note">Scan this code at any time to view your receipt or withdraw your agreement. Keep this page safe.</p>
-      </div>
-      <div class="tok-qr receipt-qr" id="receipt-qr"></div>
-    </div>
 
     <!-- Section A -->
     <div class="r-sect">
@@ -299,8 +262,7 @@
       <div class="rr"><span class="rk" id="r-b-purposes-k">Programme purposes agreed</span><span class="rv receipt-purpose-list" id="r-b-purposes-v">P-01 Inform local planning decisions about energy and heating in Aadorp (Municipality of Almelo).<br>P-02 Propose retrofit and energy transition options for homes in the Aadorp area.<br>P-03 Research how digital twins can be made useful for citizens (University of Twente / Saxion).<br>P-04 Plan a Positive Energy District for Aadorp (Duurzaam Aadorp).</span></div>
       <div class="rr"><span class="rk" id="r-b-agree-k">Agreement recorded</span><span class="rv" id="r-agree">You agreed to the above purposes on [date] at [time].</span></div>
       <div class="rr"><span class="rk" id="r-b-rules-k">Programme rules</span><span class="rv" id="r-b-rules-v">Programme Trust Framework — ask a programme worker for a copy</span></div>
-      <div class="rr"><span class="rk" id="r-b-token-k">Your reference code</span><span class="rv" id="r-tok-b">—</span></div>
-      <div class="rr"><span class="rk" id="r-b-withdraw-k">To withdraw</span><span class="rv" id="r-b-withdraw-v">Scan your QR code · enter your reference code at ctregistry.3dxverse.eu/withdraw · email privacy@3dxverse.eu. We will stop within <strong>3 working days</strong>.</span></div>
+      <div class="rr"><span class="rk" id="r-b-withdraw-k">To withdraw</span><span class="rv" id="r-b-withdraw-v">Email privacy@3dxverse.eu or tell a programme worker. We will stop within <strong>3 working days</strong>.</span></div>
       <p class="sdj" id="r-b-sdj">[Phase 2 placeholder] A machine-readable Verifiable Credential (SD-JWT / W3C VC) will be issued in Phase 2.</p>
       <p class="receipt-acnote" id="r-b-ac06">◇ AC-06: Both sections present and labelled. AC-07: Print/download produces readable output.</p>
     </div>
@@ -318,7 +280,6 @@
     <div class="btn-row receipt-actions">
       <button class="btn btn-ol" id="receipt-print-btn" onclick="window.print()">↓ Download / Print Receipt (PDF)</button>
       <button class="btn btn-s" id="receipt-email-btn" type="button" onclick="openEmailReceipt()">✉ Email receipt</button>
-      <button class="btn btn-wallet" id="receipt-wallet-btn" type="button" onclick="openWalletModal('receipt')">Add to Apple Wallet</button>
       <button class="btn btn-ag" id="receipt-survey-btn" onclick="goSurvey()">Complete short survey</button>
     </div>
   </div>
@@ -333,34 +294,29 @@
   <div class="card">
     <div class="fac"><strong>Facilitator cue — S-06</strong>If the resident says they want to stop: help them to this screen. Read the options aloud. Confirm their decision before pressing Withdraw. Never discourage withdrawal.</div>
     <div class="card-title">Withdraw Agreement</div>
-    <p class="card-lead">Enter your participation reference code to withdraw your agreement. We will stop processing your data within <strong>3 working days</strong>.</p>
+    <p class="card-lead">You can withdraw your agreement at any time. We will stop processing your data within <strong>3 working days</strong>.</p>
     <div class="wd-summary">
-      <div class="wd-label">Active agreement</div>
-      <div class="wd-code" id="wd-ref-code">AAD-001-XXXX-XXXX</div>
+      <p><strong>How to withdraw:</strong> email <strong>privacy@3dxverse.eu</strong> or tell a programme worker.</p>
       <p><strong>Questions?</strong> Contact <strong>privacy@3dxverse.eu</strong></p>
       <p>You can still view the Aadorp Local Digital Twin at any time.</p>
-      <p><strong>Other ways to withdraw:</strong> scan your QR code · email privacy@3dxverse.eu · tell a programme worker</p>
     </div>
-    <div class="ff" style="margin:18px 0"><label>Your participation code</label><input type="text" id="wd-tok" placeholder="AAD-001-XXXX-XXXX"></div>
     <div class="btn-row">
       <button class="btn btn-s" onclick="go('s-receipt')">Go back</button>
-      <button class="btn btn-wd" onclick="go('s-withdrawn')">Withdraw my agreement</button>
+      <button class="btn btn-wd" onclick="go('s-withdrawn')">Submit withdrawal request</button>
     </div>
   </div>
 </div>
 
 <div class="screen" id="s-withdrawn">
   <div class="card">
-    <div class="fac"><strong>Facilitator cue — S-06 (Withdrawal confirmed)</strong>Confirm to the resident that their withdrawal has been recorded. Remind them they can still view the digital twin. Note the token for the withdrawal log.</div>
+    <div class="fac"><strong>Facilitator cue — S-06 (Withdrawal confirmed)</strong>Confirm to the resident that their withdrawal request has been recorded. Remind them they can still view the digital twin.</div>
     <div class="done-box">
       <div class="icon">🔒</div>
-      <h2>Consent Withdrawn</h2>
-      <p>Your withdrawal has been recorded. We will stop processing your data within <strong>3 working days</strong>. You can still view the Aadorp digital twin.</p>
+      <h2>Withdrawal request received</h2>
+      <p>Your withdrawal request has been recorded. We will stop processing your data within <strong>3 working days</strong>. You can still view the Aadorp digital twin.</p>
       <button class="btn btn-ol" onclick="go('s-ldt')">View digital twin</button>
     </div>
     <div class="wd-summary">
-      <div class="wd-label">Reference code</div>
-      <div class="wd-code" id="wd-done-ref">AAD-001-XXXX-XXXX</div>
       <p><strong>Questions?</strong> Contact <strong>privacy@3dxverse.eu</strong></p>
       <p>You can still view the Aadorp Local Digital Twin at any time.</p>
     </div>
@@ -417,16 +373,30 @@
   <div class="sv-intro">
     <h2>Your Digital Twin Preferences</h2>
     <p>Now that you have agreed to participate, we have a few short questions about how you would like to use the Aadorp digital twin. Your answers help us design the tool for people like you. All responses are processed anonymously under the purposes you agreed to (P-03).</p>
-    <div class="sv-meta"><span>⏱ approx. 5 min</span><span>📋 8 questions</span><span>🔒 Anonymous</span></div>
+    <div class="sv-meta"><span>⏱ approx. 5 min</span><span>📋 9 questions</span><span>🔒 Anonymous</span></div>
   </div>
   <div class="sq-prog" id="sq-prog"></div>
 
-  <div class="qb" id="q1-card"><div class="qn">Question 1 of 8</div><div class="qt">If you could see one thing about your building's energy on a screen — what would it be?</div><div class="og" id="q1"><button class="op" onclick="p1('q1',this)">💶 Costs (€ / month)</button><button class="op" onclick="p1('q1',this)">⚡ Usage (kWh)</button><button class="op" onclick="p1('q1',this)">🌿 CO₂ emissions (kg)</button><button class="op" onclick="p1('q1',this)">🌡 Comfort (temperature)</button><button class="op" onclick="p1('q1',this)">☀ Solar energy yield</button><button class="op" onclick="p1('q1',this)">🏷 Energy label (A–G)</button></div></div>
+  <div class="qb" id="qloc-card">
+    <div class="qn">Question 1 of 9</div>
+    <div class="qt">Where do you live?</div>
+    <div class="og" id="qloc">
+      <button class="op" onclick="pLoc(this,'Almelo')">🏙 Almelo</button>
+      <button class="op" onclick="pLoc(this,'Aadorp')">🏘 Aadorp</button>
+      <button class="op" onclick="pLoc(this,'Other')">📍 Other</button>
+    </div>
+    <div class="ff qloc-other" id="qloc-other" style="display:none;margin-top:12px">
+      <label for="qloc-other-input">Please tell us where you live</label>
+      <input type="text" id="qloc-other-input" placeholder="e.g. Hengelo" oninput="setLocOther(this.value)" autocomplete="off">
+    </div>
+  </div>
 
-  <div class="qb" id="q2-card"><div class="qn">Question 2 of 8</div><div class="qt">Would you rather see your own home, or the whole neighbourhood?</div><div class="og" id="q2"><button class="op" onclick="p1('q2',this)">🏠 Only my own home</button><button class="op" onclick="p1('q2',this)">🏘 My street / block</button><button class="op" onclick="p1('q2',this)">🗺 The whole neighbourhood</button><button class="op" onclick="p1('q2',this)">🔍 Both — individual and neighbourhood</button></div></div>
+  <div class="qb" id="q1-card"><div class="qn">Question 2 of 9</div><div class="qt">If you could see one thing about your building's energy on a screen — what would it be?</div><div class="og" id="q1"><button class="op" onclick="p1('q1',this)">💶 Costs (€ / month)</button><button class="op" onclick="p1('q1',this)">⚡ Usage (kWh)</button><button class="op" onclick="p1('q1',this)">🌿 CO₂ emissions (kg)</button><button class="op" onclick="p1('q1',this)">🌡 Comfort (temperature)</button><button class="op" onclick="p1('q1',this)">☀ Solar energy yield</button><button class="op" onclick="p1('q1',this)">🏷 Energy label (A–G)</button></div></div>
+
+  <div class="qb" id="q2-card"><div class="qn">Question 3 of 9</div><div class="qt">Would you rather see your own home, or the whole neighbourhood?</div><div class="og" id="q2"><button class="op" onclick="p1('q2',this)">🏠 Only my own home</button><button class="op" onclick="p1('q2',this)">🏘 My street / block</button><button class="op" onclick="p1('q2',this)">🗺 The whole neighbourhood</button><button class="op" onclick="p1('q2',this)">🔍 Both — individual and neighbourhood</button></div></div>
 
   <div class="qb" id="q3-card">
-    <div class="qn">Question 3 of 8</div>
+    <div class="qn">Question 4 of 9</div>
     <div class="qt">Would you prefer the digital twin at per-household level or neighbourhood level?</div>
     <div class="dt-prev">
       <div class="dt-map"><a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">🗺 &nbsp;Mini preview: Twekkelerveld Smart Energy Twin ↗</a></div>
@@ -435,14 +405,14 @@
     <div class="og" id="q3"><button class="op" onclick="p1('q3',this)">🏠 Per household (detailed)</button><button class="op" onclick="p1('q3',this)">🏘 Per street / block</button><button class="op" onclick="p1('q3',this)">🗺 Entire neighbourhood</button><button class="op" onclick="p1('q3',this)">🔍 Both, depending on my question</button></div>
   </div>
 
-  <div class="qb" id="q4-card"><div class="qn">Question 4 of 8</div><div class="qt">Do you want raw numbers or a simpler format?</div><div class="og" id="q4"><button class="op" onclick="p1('q4',this)">🔢 Raw numbers (kWh, €, kg CO₂)</button><button class="op" onclick="p1('q4',this)">🏷 Labels (A–G energy class)</button><button class="op" onclick="p1('q4',this)">🟢🟡🔴 Colour-coded</button><button class="op" onclick="p1('q4',this)">📊 Both — overview and detail</button></div></div>
+  <div class="qb" id="q4-card"><div class="qn">Question 5 of 9</div><div class="qt">Do you want raw numbers or a simpler format?</div><div class="og" id="q4"><button class="op" onclick="p1('q4',this)">🔢 Raw numbers (kWh, €, kg CO₂)</button><button class="op" onclick="p1('q4',this)">🏷 Labels (A–G energy class)</button><button class="op" onclick="p1('q4',this)">🟢🟡🔴 Colour-coded</button><button class="op" onclick="p1('q4',this)">📊 Both — overview and detail</button></div></div>
 
-  <div class="qb" id="q5-card"><div class="qn">Question 5 of 8</div><div class="qt">What comparison is most useful for knowing if your home is energy-efficient?</div><div class="qh">You can choose multiple answers.</div><div class="og" id="q5"><button class="op" onclick="pN('q5',this)">📅 Yesterday</button><button class="op" onclick="pN('q5',this)">📆 Last week</button><button class="op" onclick="pN('q5',this)">📈 Last year</button><button class="op" onclick="pN('q5',this)">🏘 Similar homes in my neighbourhood</button><button class="op" onclick="pN('q5',this)">📊 National average</button></div></div>
+  <div class="qb" id="q5-card"><div class="qn">Question 6 of 9</div><div class="qt">What comparison is most useful for knowing if your home is energy-efficient?</div><div class="qh">You can choose multiple answers.</div><div class="og" id="q5"><button class="op" onclick="pN('q5',this)">📅 Yesterday</button><button class="op" onclick="pN('q5',this)">📆 Last week</button><button class="op" onclick="pN('q5',this)">📈 Last year</button><button class="op" onclick="pN('q5',this)">🏘 Similar homes in my neighbourhood</button><button class="op" onclick="pN('q5',this)">📊 National average</button></div></div>
 
-  <div class="qb" id="q6-card"><div class="qn">Question 6 of 8</div><div class="qt">Which renewable energy technologies would you prefer for your home and neighbourhood?</div><div class="qh">You can choose multiple answers.</div><div class="survey-guide"><img src="images/image%20(6).png" alt="Survey guidance visual for renewable energy technologies"><p class="guide-cap" id="q6-guide-cap">Use this example visual to compare upgrade options (for example solar, insulation, or heat pump) before choosing. Explore the full neighbourhood-scale digital twin here: <a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev</a>.</p></div><div class="og" id="q6"><button class="op" onclick="pN('q6',this)">☀ Solar panels</button><button class="op" onclick="pN('q6',this)">🔥 Heat pump</button><button class="op" onclick="pN('q6',this)">💧 Hydrogen</button><button class="op" onclick="pN('q6',this)">🧱 Insulation (wall / roof)</button><button class="op" onclick="pN('q6',this)">🔌 Local energy sharing</button><button class="op" onclick="pN('q6',this)">🌬 Wind energy</button><button class="op" onclick="pN('q6',this)">❓ Not sure yet</button></div></div>
+  <div class="qb" id="q6-card"><div class="qn">Question 7 of 9</div><div class="qt">Which renewable energy technologies would you prefer for your home and neighbourhood?</div><div class="qh">You can choose multiple answers.</div><div class="survey-guide"><img src="images/image%20(6).png" alt="Survey guidance visual for renewable energy technologies"><p class="guide-cap" id="q6-guide-cap">Use this example visual to compare upgrade options (for example solar, insulation, or heat pump) before choosing. Explore the full neighbourhood-scale digital twin here: <a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev</a>.</p></div><div class="og" id="q6"><button class="op" onclick="pN('q6',this)">☀ Solar panels</button><button class="op" onclick="pN('q6',this)">🔥 Heat pump</button><button class="op" onclick="pN('q6',this)">💧 Hydrogen</button><button class="op" onclick="pN('q6',this)">🧱 Insulation (wall / roof)</button><button class="op" onclick="pN('q6',this)">🔌 Local energy sharing</button><button class="op" onclick="pN('q6',this)">🌬 Wind energy</button><button class="op" onclick="pN('q6',this)">❓ Not sure yet</button></div></div>
 
   <div class="qb" id="q7-card">
-    <div class="qn">Question 7 of 8</div>
+    <div class="qn">Question 8 of 9</div>
     <div class="qt">Would you like an AI assistant to help compare energy scenarios for your neighbourhood?</div>
     <div class="survey-guide"><img src="images/AI2.png" alt="Survey guidance visual for AI assistant support"><p class="guide-cap" id="q7-guide-cap">This example shows how an assistant can compare scenarios and explain possible savings in plain language.</p></div>
     <div class="ai-tog"><button class="ai-btn yes" id="ai-y" onclick="pAI('yes')">👍 Yes please</button><button class="ai-btn no" id="ai-n" onclick="pAI('no')">👎 No thanks</button></div>
@@ -452,7 +422,7 @@
     </div>
   </div>
 
-   <div class="qb" id="q8-card"><div class="qn">Question 8 of 8</div><div class="qt">Is there anything else you would like to see in the digital twin, or anything that concerns you?</div><div class="qh">Optional — feel free to leave blank.</div><textarea class="q-ta" id="q8" placeholder="Your ideas or comments..."></textarea></div>
+   <div class="qb" id="q8-card"><div class="qn">Question 9 of 9</div><div class="qt">Is there anything else you would like to see in the digital twin, or anything that concerns you?</div><div class="qh">Optional — feel free to leave blank.</div><textarea class="q-ta" id="q8" placeholder="Your ideas or comments..."></textarea></div>
 
   <div class="btn-row">
     <button class="btn btn-s" onclick="go('s-receipt')">Skip survey</button>
@@ -462,7 +432,7 @@
 
 <div class="screen" id="s-sv-done">
   <div class="card">
-    <div class="fac"><strong>Facilitator cue — Survey complete</strong>Thank the resident for completing the survey. Remind them their receipt is accessible via the QR code on their token card. The session is now complete.</div>
+    <div class="fac"><strong>Facilitator cue — Survey complete</strong>Thank the resident for completing the survey. Remind them they can ask for a printed copy of their receipt, or have it emailed. The session is now complete.</div>
     <div class="done-box">
       <div class="icon">🌱</div>
       <h2>Thank you!</h2>
@@ -506,7 +476,6 @@
       <div class="adm-row"><label id="admin-brand-name-label">Programme / operator name</label><input id="cfg-name" value="3DxVERSE — Aadorp Local Digital Twin"></div>
       <div class="adm-row"><label id="admin-brand-colour-label">Primary colour (hex)</label><input type="color" id="cfg-col" value="#1F4E79" style="height:38px;padding:2px 6px;width:120px" onchange="applyColour(this.value)"></div>
       <div class="adm-row"><label id="admin-brand-site-label">Pilot site name</label><input id="cfg-site" value="Aadorp"></div>
-      <div class="adm-row"><label id="admin-brand-prefix-label">Token prefix (3 chars, auto-populates from site name)</label><input id="cfg-pfx" value="AAD" maxlength="3" style="width:80px"></div>
       <div class="adm-row"><label id="admin-brand-logo-label">Logo (PNG/SVG, max 200px wide — falls back to programme name if not uploaded)</label><input type="file" accept="image/*" onchange="prevLogo(this)"><div id="logo-prev" style="margin-top:8px"></div></div>
     </div>
   </div>
@@ -594,45 +563,20 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-  APPLE WALLET MODAL
-═══════════════════════════════════ -->
-<div id="modal-wallet" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-wallet-title">
-  <div class="modal-box modal-box--wallet">
-    <h3 class="modal-title" id="modal-wallet-title">Add to Apple Wallet</h3>
-    <p class="modal-lead">Your participation pass card — save it to your device. In a deployed version this would open directly in Apple Wallet.</p>
-    <div class="wallet-preview-wrap">
-      <canvas id="wallet-canvas" style="display:none"></canvas>
-      <div id="wallet-preview-img" style="min-height:120px;display:flex;align-items:center;justify-content:center">
-        <span style="color:var(--muted);font-size:13px">Generating pass…</span>
-      </div>
-    </div>
-    <div class="modal-note">ℹ Downloads as a high-resolution PNG. Save to Photos then import into Apple Wallet or Google Wallet, or use as a screenshot receipt.</div>
-    <div class="btn-row" style="margin-top:16px">
-      <button class="btn btn-s" onclick="closeModal('modal-wallet')">Cancel</button>
-      <button class="btn btn-wallet" onclick="downloadWalletCard()" id="wallet-download-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px;margin-bottom:1px"><path d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4V7h3l-5-5z"/></svg>
-        Download pass card
-      </button>
-    </div>
-  </div>
-</div>
-
 </div><!-- /wrap -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://unpkg.com/i18next@23.16.8/dist/umd/i18next.min.js"></script>
 <script>
 // ═══════ STATE ═══════
-let tok='', lang='en', pathway='self-serve', trustDone=false;
+let lang='en', pathway='self-serve', trustDone=false;
 let receiptMeta=null;
-let walletCardMode='receipt';
 let i18nReady=false;
-const sOrder=['s-landing','s-notice','s-trust','s-token','s-consent','s-sign','s-receipt','s-survey'];
+const sOrder=['s-landing','s-notice','s-trust','s-consent','s-sign','s-receipt','s-survey'];
 
 const i18nBindings=[
-  {selector:'.hdr-sub',en:'Aadorp Local Digital Twin',nl:'Lokale Digitale Tweeling Aadorp'},
   {selector:'.admin-link',en:'Admin',nl:'Beheer'},
+  {selector:'.hdr-brand',attr:'alt',en:'3DxVERSE',nl:'3DxVERSE'},
+  {selector:'.hdr-eu',attr:'alt',en:'Co-funded by the European Union',nl:'Mede-gefinancierd door de Europese Unie'},
   {selector:'#s-landing .step-tag',en:'Welcome - S-00',nl:'Welkom - S-00'},
   {selector:'#landing-wireframe-tag',en:'3DxVERSE IAM · WIREFRAME v0.1',nl:'3DxVERSE IAM · WIREFRAME v0.1'},
   {selector:'#landing-skip',en:'Skip to main content',nl:'Ga naar hoofdinhoud'},
@@ -682,27 +626,17 @@ const i18nBindings=[
   {selector:'#trust-lbl-5',en:'5 - Your choice',nl:'5 - Uw keuze'},
   {selector:'#trust-txt-5',html:true,en:'You do not have to take part. If you choose not to, you can still view the local digital twin. <strong>There is no penalty for declining.</strong>',nl:'U hoeft niet deel te nemen. Als u niet wilt meedoen, kunt u de lokale digitale tweeling nog steeds bekijken. <strong>Er is geen nadeel als u weigert.</strong>'},
   {selector:'#trust-lbl-6',en:'6 - Right to withdraw',nl:'6 - Recht op intrekking'},
-  {selector:'#trust-txt-6',html:true,en:'You can withdraw at any time by scanning your QR code and choosing Stop, or by telling a programme worker, or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.',nl:'U kunt op elk moment intrekken door uw QR-code te scannen en Stop te kiezen, door het aan een programmamedewerker te vertellen, of door te mailen naar <strong>privacy@3dxverse.eu</strong>. Wij stoppen binnen <strong>3 dagen</strong>.'},
+  {selector:'#trust-txt-6',html:true,en:'You can withdraw at any time by telling a programme worker or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.',nl:'U kunt op elk moment intrekken door het aan een programmamedewerker te vertellen of door te mailen naar <strong>privacy@3dxverse.eu</strong>. Wij stoppen binnen <strong>3 dagen</strong>.'},
   {selector:'#trust-lbl-7',en:'7 - Verification badge',nl:'7 - Verificatiebadge'},
   {selector:'#trust-txt-7',html:true,en:'<em>[Placeholder - Trust Framework credential verified. Issued by: 3DxVERSE Programme Board. Status: Active.]</em>',nl:'<em>[Placeholder - Trust Framework-credential geverifieerd. Uitgegeven door: 3DxVERSE Program Board. Status: Actief.]</em>'},
   {selector:'#scroll-info',en:'Scroll down to read all seven elements before confirming',nl:'Scroll omlaag om alle zeven onderdelen te lezen voordat u bevestigt'},
   {selector:'#s-trust .btn-s',en:'Back',nl:'Terug'},
   {selector:'#trust-btn',en:'Confirmed - continue',nl:'Bevestigd - ga verder'},
 
-  {selector:'#s-token .step-tag',en:'Stage 2 of 4 - Your Participation Code - S-03',nl:'Fase 2 van 4 - Uw Deelnamecode - S-03'},
-  {selector:'#s-token .fac',html:true,en:'<strong>Facilitator cue - S-03</strong>Show the resident their token number. Confirm they can see it clearly. Ask whether they want a printed copy. Remind them to keep it — they will need it to withdraw.',nl:'<strong>Begeleidershint - S-03</strong>Toon de inwoner de tokencode. Controleer of hij of zij deze duidelijk ziet. Vraag of zij een afgedrukte kopie wil. Herinner hen de code te bewaren — nodig bij intrekken.'},
-  {selector:'#s-token .card-title',en:'Your Participation Code',nl:'Uw Deelnamecode'},
-  {selector:'#s-token .card-lead',en:'This is your participation reference code. It does not contain your name or any personal details. Keep it safe as you will need it to view your receipt or to withdraw your agreement.',nl:'Dit is uw deelname-referentiecode. Het bevat geen naam of andere persoonlijke gegevens. Bewaar het goed, want u heeft het nodig om uw ontvangstbewijs te bekijken of uw akkoord in te trekken.'},
-  {selector:'#s-token .tok-lbl',en:'Your Participation Code',nl:'Uw Deelnamecode'},
-  {selector:'#s-token .tok-note',html:true,en:'Scan this QR code at any time to view your agreement or withdraw consent.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small>',nl:'Scan deze QR-code op elk moment om uw akkoord te bekijken of toestemming in te trekken.<br><small>https://ctregistry.3dxverse.eu/retrieve/<span id="tok-url">AAD-001-XXXX-XXXX</span></small>'},
-  {selector:'#token-wallet-btn',en:'Add to Apple Wallet',nl:'Voeg toe aan Apple Wallet'},
-  {selector:'#s-token .btn-s.btn-ol',en:'Print token',nl:'Token afdrukken'},
-  {selector:'#s-token .btn-p',en:'Saved - continue',nl:'Opgeslagen - ga verder'},
-
   {selector:'#s-consent .step-tag',en:'Stage 3 of 4 - Agreement - S-04',nl:'Fase 3 van 4 - Akkoord - S-04'},
   {selector:'#s-consent .fac',html:true,en:'<strong>Facilitator cue - S-04</strong>Read the full statement aloud. Explain each purpose in your own words if needed. Do not suggest what they should choose. Wait for the resident to decide.',nl:'<strong>Begeleidershint - S-04</strong>Lees de volledige verklaring hardop voor. Leg zo nodig elk doel in uw eigen woorden uit. Draag niet voor wat zij zouden moeten kiezen. Wacht op de beslissing van de inwoner.'},
   {selector:'#s-consent .card-title',en:'Your Agreement',nl:'Uw Toestemming'},
-  {selector:'#s-consent .c-stmt',html:true,en:'<p style="margin-bottom:10px">The <strong>3DxVERSE programme</strong> wants to process data about your home\'s energy use and your preferences about energy options in Aadorp.</p><p style="margin-bottom:8px">We will use this data to:</p><ul><li>Inform local planning decisions about energy and heating in Aadorp <em>(Municipality of Almelo)</em>.</li><li>Propose retrofit and energy transition options for homes in the Aadorp area.</li><li>Research how digital twins can be made useful for citizens <em>(University of Twente / Saxion)</em>.</li><li>Plan a Positive Energy District for Aadorp <em>(IS2H4C / Duurzaam Aadorp)</em>.</li><li>Record and transcribe your contributions at workshops to improve our understanding of what residents want.</li></ul><p class="c-footer">The legal basis for each of these uses is shown in the receipt you will receive. <strong>You do not have to agree.</strong> If you choose not to, you can still view the Aadorp digital twin.</p><p class="c-footer" style="margin-top:7px">You can withdraw at any time by scanning your QR code or telling a programme worker. We will stop within <strong>3 days</strong>.</p>',nl:'<p style="margin-bottom:10px">Het <strong>3DxVERSE-programma</strong> wil gegevens verwerken over het energiegebruik van uw woning en uw voorkeuren voor energieopties in Aadorp.</p><p style="margin-bottom:8px">Wij gebruiken deze gegevens om:</p><ul><li>Lokale planningsbesluiten over energie en verwarming in Aadorp te ondersteunen <em>(Gemeente Almelo)</em>.</li><li>Renovatie- en energietransitieopties voor woningen in Aadorp voor te stellen.</li><li>Onderzoek te doen naar hoe digitale tweelingen nuttig kunnen zijn voor inwoners <em>(Universiteit Twente / Saxion)</em>.</li><li>Een Positive Energy District voor Aadorp te plannen <em>(IS2H4C / Duurzaam Aadorp)</em>.</li><li>Uw bijdragen tijdens workshops op te nemen en te transcriberen om beter te begrijpen wat inwoners willen.</li></ul><p class="c-footer">De rechtsgrond per gebruik staat in het ontvangstbewijs dat u ontvangt. <strong>U hoeft niet akkoord te gaan.</strong> Als u niet wilt meedoen, kunt u de digitale tweeling van Aadorp nog steeds bekijken.</p><p class="c-footer" style="margin-top:7px">U kunt op elk moment intrekken door uw QR-code te scannen of het aan een programmamedewerker te vertellen. Wij stoppen binnen <strong>3 dagen</strong>.</p>'},
+  {selector:'#s-consent .c-stmt',html:true,en:'<p style="margin-bottom:10px">The <strong>3DxVERSE programme</strong> wants to process data about your home\'s energy use and your preferences about energy options in Aadorp.</p><p style="margin-bottom:8px">We will use this data to:</p><ul><li>Inform local planning decisions about energy and heating in Aadorp <em>(Municipality of Almelo)</em>.</li><li>Propose retrofit and energy transition options for homes in the Aadorp area.</li><li>Research how digital twins can be made useful for citizens <em>(University of Twente / Saxion)</em>.</li><li>Plan a Positive Energy District for Aadorp <em>(IS2H4C / Duurzaam Aadorp)</em>.</li><li>Record and transcribe your contributions at workshops to improve our understanding of what residents want.</li></ul><p class="c-footer">The legal basis for each of these uses is shown in the receipt you will receive. <strong>You do not have to agree.</strong> If you choose not to, you can still view the Aadorp digital twin.</p><p class="c-footer" style="margin-top:7px">You can withdraw at any time by telling a programme worker or by emailing <strong>privacy@3dxverse.eu</strong>. We will stop within <strong>3 days</strong>.</p>',nl:'<p style="margin-bottom:10px">Het <strong>3DxVERSE-programma</strong> wil gegevens verwerken over het energiegebruik van uw woning en uw voorkeuren voor energieopties in Aadorp.</p><p style="margin-bottom:8px">Wij gebruiken deze gegevens om:</p><ul><li>Lokale planningsbesluiten over energie en verwarming in Aadorp te ondersteunen <em>(Gemeente Almelo)</em>.</li><li>Renovatie- en energietransitieopties voor woningen in Aadorp voor te stellen.</li><li>Onderzoek te doen naar hoe digitale tweelingen nuttig kunnen zijn voor inwoners <em>(Universiteit Twente / Saxion)</em>.</li><li>Een Positive Energy District voor Aadorp te plannen <em>(IS2H4C / Duurzaam Aadorp)</em>.</li><li>Uw bijdragen tijdens workshops op te nemen en te transcriberen om beter te begrijpen wat inwoners willen.</li></ul><p class="c-footer">De rechtsgrond per gebruik staat in het ontvangstbewijs dat u ontvangt. <strong>U hoeft niet akkoord te gaan.</strong> Als u niet wilt meedoen, kunt u de digitale tweeling van Aadorp nog steeds bekijken.</p><p class="c-footer" style="margin-top:7px">U kunt op elk moment intrekken door het aan een programmamedewerker te vertellen of door te mailen naar <strong>privacy@3dxverse.eu</strong>. Wij stoppen binnen <strong>3 dagen</strong>.</p>'},
   {selector:'#s-consent .proc-head',en:'Your data will be processed by the following organisations',nl:'Uw gegevens worden verwerkt door de volgende organisaties'},
   {selector:'#s-consent .proc-row:nth-child(2) .proc-role',en:'Joint controller',nl:'Gezamenlijke verwerkingsverantwoordelijke'},
   {selector:'#s-consent .proc-row:nth-child(3) .proc-role',en:'Joint controller',nl:'Gezamenlijke verwerkingsverantwoordelijke'},
@@ -715,13 +649,12 @@ const i18nBindings=[
   {selector:'#s-consent .btn-decline',en:'I do not agree',nl:'Ik ga niet akkoord'},
 
   {selector:'#s-sign .step-tag',en:'Stage 3 of 4 - Confirm & Sign',nl:'Fase 3 van 4 - Bevestigen & Ondertekenen'},
-  {selector:'#s-sign .fac',html:true,en:'<strong>Facilitator cue - S-04b</strong>Ask the resident to enter the date and sign below. After they sign, confirm the token has been registered.',nl:'<strong>Begeleidershint - S-04b</strong>Vraag de inwoner om de datum in te vullen en hieronder te tekenen. Bevestig nadat zij hebben getekend dat het token is geregistreerd.'},
+  {selector:'#s-sign .fac',html:true,en:'<strong>Facilitator cue - S-04b</strong>Ask the resident to enter the date and sign below. After they sign, confirm the agreement has been recorded.',nl:'<strong>Begeleidershint - S-04b</strong>Vraag de inwoner om de datum in te vullen en hieronder te tekenen. Bevestig nadat zij hebben getekend dat het akkoord is vastgelegd.'},
   {selector:'#s-sign .card-title',en:'Confirm your agreement',nl:'Bevestig uw akkoord'},
   {selector:'#s-sign .card-lead',en:'I have read or had explained to me the information above and I understand: why my data is processed; what data may be collected; and that I can withdraw at any time.',nl:'Ik heb de bovenstaande informatie gelezen of laten uitleggen en ik begrijp: waarom mijn gegevens worden verwerkt; welke gegevens kunnen worden verzameld; en dat ik op elk moment kan intrekken.'},
-  {selector:'#s-sign .sig-row .ff:nth-child(1) label',en:'Participation code',nl:'Deelnamecode'},
-  {selector:'#s-sign .sig-row .ff:nth-child(2) label',en:'Date',nl:'Datum'},
+  {selector:'#s-sign .sig-row .ff:nth-child(1) label',en:'Date',nl:'Datum'},
   {selector:'#s-sign .ff[style*="margin-bottom:5px"] label',en:'Signature - sign in the box below',nl:'Handtekening - teken in het vak hieronder'},
-  {selector:'#s-sign .ff[style*="margin-top:14px"] label',en:'Facilitator confirms receipt + token registered',nl:'Begeleider bevestigt ontvangst + token geregistreerd'},
+  {selector:'#s-sign .ff[style*="margin-top:14px"] label',en:'Facilitator confirms agreement recorded',nl:'Begeleider bevestigt akkoord vastgelegd'},
   {selector:'#s-sign .sig-hint',en:'Sign here',nl:'Teken hier'},
   {selector:'#s-sign .btn-s[onclick="clearSig()"]',en:'Clear',nl:'Wissen'},
   {selector:'#s-sign .btn-p',en:'Submit & generate receipt',nl:'Verstuur & genereer ontvangstbewijs'},
@@ -732,14 +665,11 @@ const i18nBindings=[
   {selector:'#s-receipt .done-box p',en:'Agreement recorded. Save or print this page. You will need it to retrieve your receipt or withdraw your agreement later.',nl:'Uw akkoord is vastgelegd. Bewaar of print deze pagina. U heeft deze later nodig om uw ontvangstbewijs op te halen of uw akkoord in te trekken.'},
   {selector:'#s-receipt .fac',html:true,en:'<strong>Facilitator cue - S-05</strong>Ask whether they want a printed copy. Offer email if they have an address. Point to the withdrawal instructions at the bottom of the receipt.',nl:'<strong>Begeleidershint - S-05</strong>Vraag of zij een afgedrukte kopie willen. Bied e-mail aan als zij een adres hebben. Wijs op de instructies voor intrekken onderaan het ontvangstbewijs.'},
   {selector:'#receipt-card .card-title',html:true,en:'Combined Receipt - <span id="r-id">3DX-AAD-2026-XXXXXX</span>',nl:'Gecombineerd Ontvangstbewijs - <span id="r-id">3DX-AAD-2026-XXXXXX</span>'},
-  {selector:'#r-scan-title',en:'Scan to retrieve this receipt',nl:'Scan om dit ontvangstbewijs op te halen'},
-  {selector:'#r-scan-note',en:'Scan this code at any time to view your receipt or withdraw your agreement. Keep this page safe.',nl:'Scan deze code op elk moment om uw ontvangstbewijs te bekijken of uw akkoord in te trekken. Bewaar deze pagina goed.'},
   {selector:'#s-receipt .wd-box h3',en:'Need to withdraw?',nl:'Wilt u intrekken?'},
   {selector:'#s-receipt .wd-box p',en:'You can withdraw your agreement at any time. This has no adverse consequences.',nl:'U kunt uw akkoord op elk moment intrekken. Dit heeft geen nadelige gevolgen.'},
   {selector:'#s-receipt .wd-box .btn-wd',en:'Withdraw agreement',nl:'Akkoord intrekken'},
   {selector:'#receipt-print-btn',en:'Download / Print Receipt (PDF)',nl:'Ontvangstbewijs downloaden / afdrukken (PDF)'},
   {selector:'#receipt-email-btn',en:'✉ Email receipt',nl:'✉ Ontvangstbewijs e-mailen'},
-  {selector:'#receipt-wallet-btn',en:'Add to Apple Wallet',nl:'Voeg toe aan Apple Wallet'},
   {selector:'#receipt-survey-btn',en:'Complete short survey',nl:'Korte enquete invullen'},
 
   {selector:'#r-a-title',en:'Section A - What data we collected and why',nl:'Sectie A - Welke gegevens wij hebben verzameld en waarom'},
@@ -761,43 +691,28 @@ const i18nBindings=[
   {selector:'#r-b-agree-k',en:'Agreement recorded',nl:'Akkoord vastgelegd'},
   {selector:'#r-b-rules-k',en:'Programme rules',nl:'Programmaregels'},
   {selector:'#r-b-rules-v',en:'Programme Trust Framework - ask a programme worker for a copy',nl:'Programma Trust Framework - vraag een programmamedewerker om een exemplaar'},
-  {selector:'#r-b-token-k',en:'Your reference code',nl:'Uw referentiecode'},
   {selector:'#r-b-withdraw-k',en:'To withdraw',nl:'Om in te trekken'},
-  {selector:'#r-b-withdraw-v',html:true,en:'Scan your QR code &middot; enter your reference code at ctregistry.3dxverse.eu/withdraw &middot; email privacy@3dxverse.eu. We will stop within <strong>3 working days</strong>.',nl:'Scan uw QR-code &middot; voer uw referentiecode in op ctregistry.3dxverse.eu/withdraw &middot; mail naar privacy@3dxverse.eu. Wij stoppen binnen <strong>3 werkdagen</strong>.'},
+  {selector:'#r-b-withdraw-v',html:true,en:'Email privacy@3dxverse.eu or tell a programme worker. We will stop within <strong>3 working days</strong>.',nl:'Mail naar privacy@3dxverse.eu of vertel het aan een programmamedewerker. Wij stoppen binnen <strong>3 werkdagen</strong>.'},
   {selector:'#r-b-sdj',en:'[Phase 2 placeholder] A machine-readable Verifiable Credential (SD-JWT / W3C VC) will be issued in Phase 2.',nl:'[Fase 2 placeholder] Een machineleesbare Verifiable Credential (SD-JWT / W3C VC) wordt in Fase 2 uitgegeven.'},
   {selector:'#r-b-ac06',en:'◇ AC-06: Both sections present and labelled. AC-07: Print/download produces readable output.',nl:'◇ AC-06: Beide secties zijn aanwezig en gelabeld. AC-07: Print/download levert leesbare uitvoer op.'},
   {selector:'#r-receipt-warn',en:'The legal basis placeholders above remain visible where programme purposes or processor arrangements are not yet fully confirmed in the privacy policy.',nl:'De placeholders voor de rechtsgrond hierboven blijven zichtbaar waar programmadoelen of verwerkersafspraken nog niet volledig in het privacybeleid zijn bevestigd.'},
 
+  {selector:'#s-withdraw .step-tag',en:'Withdraw Consent - S-06',nl:'Toestemming intrekken - S-06'},
   {selector:'#s-withdraw .fac',html:true,en:'<strong>Facilitator cue - S-06</strong>If the resident says they want to stop: help them to this screen. Read the options aloud. Confirm their decision before pressing Withdraw. Never discourage withdrawal.',nl:'<strong>Begeleidershint - S-06</strong>Wil de inwoner stoppen: help hem of haar naar dit scherm. Lees de opties hardop voor. Bevestig de beslissing voordat u op Intrekken drukt. Ontmoedig intrekking nooit.'},
-  {selector:'#wd-ref-code',en:'AAD-001-XXXX-XXXX',nl:'AAD-001-XXXX-XXXX'},
-  {selector:'#wd-done-ref',en:'AAD-001-XXXX-XXXX',nl:'AAD-001-XXXX-XXXX'},
-  {selector:'#s-withdraw .wd-summary .wd-label',en:'Active agreement',nl:'Actief akkoord'},
-  {selector:'#s-withdraw .wd-summary p:nth-of-type(1)',html:true,en:'<strong>Questions?</strong> Contact <strong>privacy@3dxverse.eu</strong>',nl:'<strong>Vragen?</strong> Neem contact op met <strong>privacy@3dxverse.eu</strong>'},
-  {selector:'#s-withdraw .wd-summary p:nth-of-type(2)',en:'You can still view the Aadorp Local Digital Twin at any time.',nl:'U kunt de Aadorp lokale digitale tweeling op elk moment nog steeds bekijken.'},
-  {selector:'#s-withdraw .wd-summary p:nth-of-type(3)',en:'Other ways to withdraw: scan your QR code · email privacy@3dxverse.eu · tell a programme worker',nl:'Andere manieren om in te trekken: scan uw QR-code · mail naar privacy@3dxverse.eu · vertel het aan een programmamedewerker'},
   {selector:'#s-withdraw .card-title',en:'Withdraw Agreement',nl:'Toestemming intrekken'},
-  {selector:'#s-withdraw .card-lead',html:true,en:'Enter your participation reference code to withdraw your agreement. We will stop processing your data within <strong>3 working days</strong>.',nl:'Voer uw deelname-referentiecode in om uw akkoord in te trekken. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>.'},
+  {selector:'#s-withdraw .card-lead',html:true,en:'You can withdraw your agreement at any time. We will stop processing your data within <strong>3 working days</strong>.',nl:'U kunt uw akkoord op elk moment intrekken. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>.'},
+  {selector:'#s-withdraw .wd-summary p:nth-of-type(1)',html:true,en:'<strong>How to withdraw:</strong> email <strong>privacy@3dxverse.eu</strong> or tell a programme worker.',nl:'<strong>Hoe intrekken:</strong> mail naar <strong>privacy@3dxverse.eu</strong> of vertel het aan een programmamedewerker.'},
+  {selector:'#s-withdraw .wd-summary p:nth-of-type(2)',html:true,en:'<strong>Questions?</strong> Contact <strong>privacy@3dxverse.eu</strong>',nl:'<strong>Vragen?</strong> Neem contact op met <strong>privacy@3dxverse.eu</strong>'},
+  {selector:'#s-withdraw .wd-summary p:nth-of-type(3)',en:'You can still view the Aadorp Local Digital Twin at any time.',nl:'U kunt de Aadorp lokale digitale tweeling op elk moment nog steeds bekijken.'},
   {selector:'#s-withdraw .btn-s',en:'<- Go back',nl:'<- Ga terug'},
-  {selector:'#s-withdraw .btn-wd',en:'Withdraw my agreement',nl:'Mijn akkoord intrekken'},
-  {selector:'#s-withdrawn .done-box p',html:true,en:'Your withdrawal has been recorded. We will stop processing your data within <strong>3 working days</strong>. You can still view the Aadorp digital twin.',nl:'Uw intrekking is vastgelegd. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>. U kunt de digitale tweeling van Aadorp nog steeds bekijken.'},
-  {selector:'#s-withdrawn .wd-summary .wd-label',en:'Reference code',nl:'Referentiecode'},
+  {selector:'#s-withdraw .btn-wd',en:'Submit withdrawal request',nl:'Intrekkingsverzoek versturen'},
+
+  {selector:'#s-withdrawn .fac',html:true,en:'<strong>Facilitator cue - S-06 (Withdrawal confirmed)</strong>Confirm to the resident that their withdrawal request has been recorded. Remind them they can still view the digital twin.',nl:'<strong>Begeleidershint - S-06 (intrekking bevestigd)</strong>Bevestig tegenover de inwoner dat het intrekkingsverzoek is vastgelegd. Herinner hen dat ze de digitale tweeling nog kunnen bekijken.'},
+  {selector:'#s-withdrawn .done-box h2',en:'Withdrawal request received',nl:'Intrekkingsverzoek ontvangen'},
+  {selector:'#s-withdrawn .done-box p',html:true,en:'Your withdrawal request has been recorded. We will stop processing your data within <strong>3 working days</strong>. You can still view the Aadorp digital twin.',nl:'Uw intrekkingsverzoek is vastgelegd. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>. U kunt de digitale tweeling van Aadorp nog steeds bekijken.'},
   {selector:'#s-withdrawn .wd-summary p:nth-of-type(1)',html:true,en:'<strong>Questions?</strong> Contact <strong>privacy@3dxverse.eu</strong>',nl:'<strong>Vragen?</strong> Neem contact op met <strong>privacy@3dxverse.eu</strong>'},
   {selector:'#s-withdrawn .wd-summary p:nth-of-type(2)',en:'You can still view the Aadorp Local Digital Twin at any time.',nl:'U kunt de Aadorp lokale digitale tweeling op elk moment nog steeds bekijken.'},
   {selector:'#s-withdrawn .btn-ol',en:'View digital twin',nl:'Bekijk digitale tweeling'},
-
-  {selector:'#s-withdraw .step-tag',en:'Withdraw Consent - S-06',nl:'Toestemming intrekken - S-06'},
-  {selector:'#s-withdraw .card-title',en:'Withdraw Agreement',nl:'Toestemming intrekken'},
-  {selector:'#s-withdraw .card-lead',html:true,en:'Enter your participation reference code to withdraw your agreement. We will stop processing your data within <strong>3 working days</strong>.',nl:'Voer uw deelname-referentiecode in om uw akkoord in te trekken. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>.'},
-  {selector:'#s-withdraw .ff label',en:'Your participation code',nl:'Uw deelnamecode'},
-  {selector:'#wd-tok',attr:'placeholder',en:'AAD-001-XXXX-XXXX',nl:'AAD-001-XXXX-XXXX'},
-  {selector:'#s-withdraw .btn-s',en:'<- Go back',nl:'<- Ga terug'},
-  {selector:'#s-withdraw .btn-wd',en:'Withdraw my agreement',nl:'Mijn akkoord intrekken'},
-
-  {selector:'#s-withdrawn .done-box h2',en:'Withdrawal confirmed',nl:'Intrekking bevestigd'},
-  {selector:'#s-withdrawn .done-box p',html:true,en:'Your withdrawal has been recorded. We will stop processing your data within <strong>3 working days</strong>. You can still view the Aadorp digital twin.',nl:'Uw intrekking is vastgelegd. Wij stoppen met het verwerken van uw gegevens binnen <strong>3 werkdagen</strong>. U kunt de digitale tweeling van Aadorp nog steeds bekijken.'},
-  {selector:'#s-withdrawn .btn-ol',en:'View digital twin',nl:'Bekijk digitale tweeling'},
-
-  {selector:'#s-withdrawn .fac',html:true,en:'<strong>Facilitator cue - S-06 (Withdrawal confirmed)</strong>Confirm to the resident that their withdrawal has been recorded. Remind them they can still view the digital twin. Note the token for the withdrawal log.',nl:'<strong>Begeleidershint - S-06 (intrekking bevestigd)</strong>Bevestig tegenover de inwoner dat de intrekking is vastgelegd. Herinner hen dat ze de digitale tweeling nog kunnen bekijken. Noteer het token voor het intrekkingenlogboek.'},
 
   {selector:'#s-ldt > .fac',html:true,en:'<strong>Facilitator cue - S-07 (Public LDT viewer)</strong>No personal data is collected on this screen. If the resident decides they want to take part after viewing, press &quot;Take part in a session&quot; to return to S-01.',nl:'<strong>Begeleidershint - S-07 (Openbare digitale tweeling)</strong>Er worden geen persoonsgegevens verzameld op dit scherm. Als de inwoner na het bekijken alsnog wil meedoen, drukt u op „Deelnemen aan een sessie” om naar S-01 terug te gaan.'},
 
@@ -817,9 +732,16 @@ const i18nBindings=[
   {selector:'#s-survey .sv-intro h2',en:'Your Digital Twin Preferences',nl:'Uw voorkeuren voor de digitale tweeling'},
   {selector:'#s-survey .sv-intro p',en:'Now that you have agreed to participate, we have a few short questions about how you would like to use the Aadorp digital twin. Your answers help us design the tool for people like you. All responses are processed anonymously under the purposes you agreed to (P-03).',nl:'Nu u akkoord bent gegaan met deelname, hebben we enkele korte vragen over hoe u de digitale tweeling van Aadorp wilt gebruiken. Uw antwoorden helpen ons de tool te ontwerpen voor mensen zoals u. Alle antwoorden worden anoniem verwerkt onder de doelen waarmee u akkoord bent gegaan (P-03).'},
   {selector:'#s-survey .sv-meta span:nth-child(1)',en:'⏱ approx. 5 min',nl:'⏱ ongeveer 5 min'},
-  {selector:'#s-survey .sv-meta span:nth-child(2)',en:'📋 8 questions',nl:'📋 8 vragen'},
+  {selector:'#s-survey .sv-meta span:nth-child(2)',en:'📋 9 questions',nl:'📋 9 vragen'},
   {selector:'#s-survey .sv-meta span:nth-child(3)',en:'🔒 Anonymous',nl:'🔒 Anoniem'},
-  {selector:'#q1-card .qn',en:'Question 1 of 8',nl:'Vraag 1 van 8'},
+  {selector:'#qloc-card .qn',en:'Question 1 of 9',nl:'Vraag 1 van 9'},
+  {selector:'#qloc-card .qt',en:'Where do you live?',nl:'Waar woont u?'},
+  {selector:'#qloc .op:nth-child(1)',en:'🏙 Almelo',nl:'🏙 Almelo'},
+  {selector:'#qloc .op:nth-child(2)',en:'🏘 Aadorp',nl:'🏘 Aadorp'},
+  {selector:'#qloc .op:nth-child(3)',en:'📍 Other',nl:'📍 Anders'},
+  {selector:'#qloc-other label',en:'Please tell us where you live',nl:'Vertel ons waar u woont'},
+  {selector:'#qloc-other-input',attr:'placeholder',en:'e.g. Hengelo',nl:'bijv. Hengelo'},
+  {selector:'#q1-card .qn',en:'Question 2 of 9',nl:'Vraag 2 van 9'},
   {selector:'#q1-card .qt',en:'If you could see one thing about your building\'s energy on a screen — what would it be?',nl:'Als u een ding over de energie van uw gebouw op een scherm kon zien — wat zou dat zijn?'},
   {selector:'#q1 .op:nth-child(1)',en:'💶 Costs (€ / month)',nl:'💶 Kosten (€ / maand)'},
   {selector:'#q1 .op:nth-child(2)',en:'⚡ Usage (kWh)',nl:'⚡ Verbruik (kWh)'},
@@ -827,13 +749,13 @@ const i18nBindings=[
   {selector:'#q1 .op:nth-child(4)',en:'🌡️ Comfort (temperature)',nl:'🌡️ Comfort (temperatuur)'},
   {selector:'#q1 .op:nth-child(5)',en:'☀️ Solar energy yield',nl:'☀️ Opbrengst zonne-energie'},
   {selector:'#q1 .op:nth-child(6)',en:'🏷️ Energy label (A–G)',nl:'🏷️ Energielabel (A–G)'},
-  {selector:'#q2-card .qn',en:'Question 2 of 8',nl:'Vraag 2 van 8'},
+  {selector:'#q2-card .qn',en:'Question 3 of 9',nl:'Vraag 3 van 9'},
   {selector:'#q2-card .qt',en:'Would you rather see your own home, or the whole neighbourhood?',nl:'Ziet u liever uw eigen woning, of de hele wijk?'},
   {selector:'#q2 .op:nth-child(1)',en:'🏠 Only my own home',nl:'🏠 Alleen mijn eigen woning'},
   {selector:'#q2 .op:nth-child(2)',en:'🏘️ My street / block',nl:'🏘️ Mijn straat / blok'},
   {selector:'#q2 .op:nth-child(3)',en:'🗺️ The whole neighbourhood',nl:'🗺️ De hele wijk'},
   {selector:'#q2 .op:nth-child(4)',en:'🔍 Both — individual and neighbourhood',nl:'🔍 Beide — individueel en wijkniveau'},
-  {selector:'#q3-card .qn',en:'Question 3 of 8',nl:'Vraag 3 van 8'},
+  {selector:'#q3-card .qn',en:'Question 4 of 9',nl:'Vraag 4 van 9'},
   {selector:'#q3-card .qt',en:'Would you prefer the digital twin at per-household level or neighbourhood level?',nl:'Heeft u voorkeur voor de digitale tweeling op huishoudniveau of wijkniveau?'},
   {selector:'#q3-card .dt-map',html:true,en:'<a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">🗺️ &nbsp;Mini preview: Twekkelerveld Smart Energy Twin ↗</a>',nl:'<a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">🗺️ &nbsp;Mini-preview: Twekkelerveld Smart Energy Twin ↗</a>'},
   {selector:'#q3-card .dt-cap',en:'This is a small preview of a neighbourhood digital twin. If you would like, open it to explore the map, click buildings, and compare retrofit scenarios.',nl:'Dit is een kleine preview van een digitale tweeling op wijkniveau. Als u wilt, kunt u die openen om de kaart te verkennen, op gebouwen te klikken en renovatiescenario\'s te vergelijken.'},
@@ -841,13 +763,13 @@ const i18nBindings=[
   {selector:'#q3 .op:nth-child(2)',en:'🏘️ Per street / block',nl:'🏘️ Per straat / blok'},
   {selector:'#q3 .op:nth-child(3)',en:'🗺️ Entire neighbourhood',nl:'🗺️ Hele wijk'},
   {selector:'#q3 .op:nth-child(4)',en:'🔍 Both, depending on my question',nl:'🔍 Beide, afhankelijk van mijn vraag'},
-  {selector:'#q4-card .qn',en:'Question 4 of 8',nl:'Vraag 4 van 8'},
+  {selector:'#q4-card .qn',en:'Question 5 of 9',nl:'Vraag 5 van 9'},
   {selector:'#q4-card .qt',en:'Do you want raw numbers or a simpler format?',nl:'Wilt u ruwe cijfers of een eenvoudiger format?'},
   {selector:'#q4 .op:nth-child(1)',en:'🔢 Raw numbers (kWh, €, kg CO₂)',nl:'🔢 Ruwe cijfers (kWh, €, kg CO₂)'},
   {selector:'#q4 .op:nth-child(2)',en:'🏷️ Labels (A–G energy class)',nl:'🏷️ Labels (A–G energieklasse)'},
   {selector:'#q4 .op:nth-child(3)',en:'🟢🟡🔴 Colour-coded',nl:'🟢🟡🔴 Kleurgecodeerd'},
   {selector:'#q4 .op:nth-child(4)',en:'📊 Both — overview and detail',nl:'📊 Beide — overzicht en detail'},
-  {selector:'#q5-card .qn',en:'Question 5 of 8',nl:'Vraag 5 van 8'},
+  {selector:'#q5-card .qn',en:'Question 6 of 9',nl:'Vraag 6 van 9'},
   {selector:'#q5-card .qt',en:'What comparison is most useful for knowing if your home is energy-efficient?',nl:'Welke vergelijking is het nuttigst om te weten of uw woning energiezuinig is?'},
   {selector:'#q5-card .qh',en:'You can choose multiple answers.',nl:'U kunt meerdere antwoorden kiezen.'},
   {selector:'#q5 .op:nth-child(1)',en:'📅 Yesterday',nl:'📅 Gisteren'},
@@ -855,7 +777,7 @@ const i18nBindings=[
   {selector:'#q5 .op:nth-child(3)',en:'📈 Last year',nl:'📈 Vorig jaar'},
   {selector:'#q5 .op:nth-child(4)',en:'🏘️ Similar homes in my neighbourhood',nl:'🏘️ Vergelijkbare woningen in mijn wijk'},
   {selector:'#q5 .op:nth-child(5)',en:'📊 National average',nl:'📊 Landelijk gemiddelde'},
-  {selector:'#q6-card .qn',en:'Question 6 of 8',nl:'Vraag 6 van 8'},
+  {selector:'#q6-card .qn',en:'Question 7 of 9',nl:'Vraag 7 van 9'},
   {selector:'#q6-card .qt',en:'Which renewable energy technologies would you prefer for your home and neighbourhood?',nl:'Welke duurzame energietechnologieen heeft u voorkeur voor in uw woning en wijk?'},
   {selector:'#q6-card .qh',en:'You can choose multiple answers.',nl:'U kunt meerdere antwoorden kiezen.'},
   {selector:'#q6-guide-cap',html:true,en:'Use this example visual to compare upgrade options (for example solar, insulation, or heat pump) before choosing. Explore the full neighbourhood-scale digital twin here: <a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev</a>.',nl:'Gebruik dit voorbeeld om verbeteropties (bijvoorbeeld zon, isolatie of warmtepomp) te vergelijken voordat u kiest. Bekijk hier de volledige wijkschaal digitale tweeling: <a href="https://a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev/" target="_blank" rel="noopener noreferrer">a-neighbourhood-scale-urban-digital-twin-for-energy-ecolog.pages.dev</a>.'},
@@ -866,7 +788,7 @@ const i18nBindings=[
   {selector:'#q6 .op:nth-child(5)',en:'🔌 Local energy sharing',nl:'🔌 Lokale energiedeling'},
   {selector:'#q6 .op:nth-child(6)',en:'🌬️ Wind energy',nl:'🌬️ Windenergie'},
   {selector:'#q6 .op:nth-child(7)',en:'❓ Not sure yet',nl:'❓ Nog niet zeker'},
-  {selector:'#q7-card .qn',en:'Question 7 of 8',nl:'Vraag 7 van 8'},
+  {selector:'#q7-card .qn',en:'Question 8 of 9',nl:'Vraag 8 van 9'},
   {selector:'#q7-card .qt',en:'Would you like an AI assistant to help compare energy scenarios for your neighbourhood?',nl:'Wilt u een AI-assistent om energiescenarios voor uw wijk te vergelijken?'},
   {selector:'#q7-guide-cap',en:'This example shows how an assistant can compare scenarios and explain possible savings in plain language.',nl:'Dit voorbeeld laat zien hoe een assistent scenario\'s kan vergelijken en mogelijke besparingen in duidelijke taal kan uitleggen.'},
   {selector:'#ai-y',en:'👍 Yes please',nl:'👍 Ja graag'},
@@ -878,14 +800,14 @@ const i18nBindings=[
   {selector:'#q7ai .op:nth-child(4)',en:'🏠 Comfort improvements',nl:'🏠 Comfortverbetering'},
   {selector:'#q7ai .op:nth-child(5)',en:'🚲 Traffic & mobility impact',nl:'🚲 Impact op verkeer en mobiliteit'},
   {selector:'#q7ai .op:nth-child(6)',en:'💰 Current subsidies',nl:'💰 Beschikbare subsidies'},
-  {selector:'#q8-card .qn',en:'Question 8 of 8',nl:'Vraag 8 van 8'},
+  {selector:'#q8-card .qn',en:'Question 9 of 9',nl:'Vraag 9 van 9'},
   {selector:'#q8-card .qt',en:'Is there anything else you would like to see in the digital twin, or anything that concerns you?',nl:'Is er nog iets dat u in de digitale tweeling wilt zien, of iets waar u zich zorgen over maakt?'},
   {selector:'#q8-card .qh',en:'Optional - feel free to leave blank.',nl:'Optioneel - leeg laten mag.'},
   {selector:'#q8',attr:'placeholder',en:'Your ideas or comments...',nl:'Uw ideeen of opmerkingen...'},
   {selector:'#s-survey .btn-s',en:'Skip survey',nl:'Enquete overslaan'},
   {selector:'#s-survey .btn-ag',en:'Submit answers',nl:'Antwoorden versturen'},
 
-  {selector:'#s-sv-done .fac',html:true,en:'<strong>Facilitator cue - Survey complete</strong>Thank the resident for completing the survey. Remind them their receipt is accessible via the QR code on their token card. The session is now complete.',nl:'<strong>Begeleidershint - Enquete voltooid</strong>Bedank de inwoner voor het invullen van de enquete. Herinner hen dat ze het ontvangstbewijs kunnen openen via de QR-code op hun tokenpas. De sessie is nu afgerond.'},
+  {selector:'#s-sv-done .fac',html:true,en:'<strong>Facilitator cue - Survey complete</strong>Thank the resident for completing the survey. Remind them they can ask for a printed copy of their receipt, or have it emailed. The session is now complete.',nl:'<strong>Begeleidershint - Enquete voltooid</strong>Bedank de inwoner voor het invullen van de enquete. Herinner hen dat ze om een afgedrukte kopie van het ontvangstbewijs kunnen vragen, of het kunnen laten e-mailen. De sessie is nu afgerond.'},
 
   {selector:'#s-sv-done .done-box h2',en:'Thank you!',nl:'Dank u wel!'},
   {selector:'#s-sv-done .done-box p',en:'Your answers have been anonymously recorded and will help us design the Aadorp digital twin for all residents.',nl:'Uw antwoorden zijn anoniem vastgelegd en helpen ons de digitale tweeling van Aadorp te ontwerpen voor alle inwoners.'},
@@ -905,7 +827,6 @@ const i18nBindings=[
   {selector:'#admin-brand-name-label',en:'Programme / operator name',nl:'Programma / operatornaam'},
   {selector:'#admin-brand-colour-label',en:'Primary colour (hex)',nl:'Primaire kleur (hex)'},
   {selector:'#admin-brand-site-label',en:'Pilot site name',nl:'Pilotlocatie'},
-  {selector:'#admin-brand-prefix-label',en:'Token prefix (3 chars, auto-populates from site name)',nl:'Tokenprefix (3 tekens, automatisch vanuit de sitenaam)'},
   {selector:'#admin-brand-logo-label',en:'Logo (PNG/SVG, max 200px wide — falls back to programme name if not uploaded)',nl:'Logo (PNG/SVG, max. 200px breed — valt terug op programmanaam als het niet wordt geupload)'},
   {selector:'#admin-data-title',en:'Panel 2 - Data Categories (Layer A)',nl:'Paneel 2 - Datacategorieen (Laag A)'},
   {selector:'#admin-data-col-id',en:'ID',nl:'ID'},
@@ -1010,18 +931,10 @@ function formatReceiptDate(dateString, locale){
   return new Intl.DateTimeFormat(locale,{day:'numeric',month:'long',year:'numeric'}).format(date);
 }
 
-function renderReceiptQR(){
-  const wrap=document.getElementById('receipt-qr');
-  if(!wrap || !tok || typeof QRCode==='undefined') return;
-  wrap.innerHTML='';
-  new QRCode(wrap,{text:'https://ctregistry.3dxverse.eu/retrieve/'+tok,width:118,height:118,colorDark:'#1F4E79',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
-}
-
 function updateReceiptRuntimeText(){
   if(!receiptMeta) return;
   const dt=document.getElementById('r-dt');
   const agree=document.getElementById('r-agree');
-  const scanTok=document.getElementById('r-scan-token');
   const prettyDate=formatReceiptDate(receiptMeta.date,lang==='nl'?'nl-NL':'en-GB');
   if(dt){
     dt.textContent=lang==='nl'
@@ -1033,9 +946,6 @@ function updateReceiptRuntimeText(){
       ? ('U bent akkoord gegaan met de bovenstaande doelen op '+prettyDate+' om '+receiptMeta.time+'.')
       : ('You agreed to the above purposes on '+prettyDate+' at '+receiptMeta.time+'.');
   }
-  if(scanTok){
-    scanTok.textContent=tok||'AAD-001-XXXX-XXXX';
-  }
 }
 
 // ═══════ NAV ═══════
@@ -1045,19 +955,8 @@ function go(id){
   if(el) el.classList.add('active');
   updateProg(id);
   window.scrollTo({top:0,behavior:'smooth'});
-  if(id==='s-token') issueToken();
   if(id==='s-sign'){
-    document.getElementById('sig-tok').value=tok;
     document.getElementById('sig-date').value=new Date().toISOString().split('T')[0];
-  }
-  if(id==='s-withdraw' || id==='s-withdrawn'){
-    const ref=document.getElementById('wd-ref-code');
-    const doneRef=document.getElementById('wd-done-ref');
-    const input=document.getElementById('wd-tok');
-    const code=tok||'AAD-001-XXXX-XXXX';
-    if(ref) ref.textContent=code;
-    if(doneRef) doneRef.textContent=code;
-    if(input && !input.value) input.value=code;
   }
   if(id==='s-survey') initSQDots();
 }
@@ -1115,23 +1014,6 @@ function checkTrust(){
   }
 }
 
-// ═══════ TOKEN ISSUANCE ═══════
-// Format per CD-12 s5.2 / Brief §2.2: AAD-001-XXXX-XXXX
-function genTok(){
-  const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  const seg=()=>Array.from({length:4},()=>chars[Math.floor(Math.random()*chars.length)]).join('');
-  const pfx=(document.getElementById('cfg-pfx')||{value:'AAD'}).value.toUpperCase().slice(0,3)||'AAD';
-  return `${pfx}-001-${seg()}-${seg()}`;
-}
-function issueToken(){
-  if(tok) return;
-  tok=genTok();
-  document.getElementById('tok-display').textContent=tok;
-  document.getElementById('tok-url').textContent=tok;
-  const w=document.getElementById('qr-wrap'); w.innerHTML='';
-  new QRCode(w,{text:'https://ctregistry.3dxverse.eu/retrieve/'+tok,width:118,height:118,colorDark:'#1F4E79',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
-}
-
 // ═══════ SIGNATURE ═══════
 (function(){
   let drawing=false;
@@ -1161,19 +1043,33 @@ function buildReceipt(){
   const rid='3DX-AAD-2026-'+String(Math.floor(Math.random()*900000)+100000);
   document.getElementById('r-id').textContent=rid;
   document.getElementById('r-id2').textContent=rid;
-  document.getElementById('r-tok-b').textContent=tok;
-  document.getElementById('r-scan-token').textContent=tok;
-  renderReceiptQR();
   updateReceiptRuntimeText();
   go('s-receipt');
 }
 function goSurvey(){initSQDots();go('s-survey');}
 
 // ═══════ SURVEY ═══════
-const ans={q1:null,q2:null,q3:null,q4:null,q5:[],q6:[],q7:null,q7ai:[],q8:''};
+const ans={qloc:null,qlocOther:'',q1:null,q2:null,q3:null,q4:null,q5:[],q6:[],q7:null,q7ai:[],q8:''};
 function p1(qid,btn){document.querySelectorAll('#'+qid+' .op').forEach(p=>p.classList.remove('sel'));btn.classList.add('sel');ans[qid]=btn.textContent.trim();updDots();}
 function pN(qid,btn){btn.classList.toggle('sel');const v=btn.textContent.trim(),a=ans[qid],i=a.indexOf(v);if(i>=0)a.splice(i,1);else a.push(v);updDots();}
 function pAI(v){ans.q7=v;document.getElementById('ai-y').classList.toggle('sel',v==='yes');document.getElementById('ai-n').classList.toggle('sel',v==='no');document.getElementById('ai-more').style.display=v==='yes'?'block':'none';updDots();}
+function pLoc(btn,val){
+  document.querySelectorAll('#qloc .op').forEach(p=>p.classList.remove('sel'));
+  btn.classList.add('sel');
+  ans.qloc=val;
+  const oth=document.getElementById('qloc-other');
+  const inp=document.getElementById('qloc-other-input');
+  if(val==='Other'){
+    oth.style.display='block';
+    if(inp) setTimeout(()=>inp.focus(),60);
+  }else{
+    oth.style.display='none';
+    ans.qlocOther='';
+    if(inp) inp.value='';
+  }
+  updDots();
+}
+function setLocOther(v){ans.qlocOther=(v||'').trim();updDots();}
 function ensureSurveyQuestionsVisible(){
   document.querySelectorAll('#s-survey .qb').forEach(card=>{
     card.style.display='block';
@@ -1191,7 +1087,7 @@ function initSQDots(){
   const c=document.getElementById('sq-prog');
   if(!c) return;
   c.innerHTML='';
-  for(let i=0;i<8;i++){
+  for(let i=0;i<9;i++){
     const d=document.createElement('div');
     d.className='sqd';
     d.id='sqd'+i;
@@ -1200,7 +1096,7 @@ function initSQDots(){
   updDots();
   requestAnimationFrame(focusFirstSurveyQuestion);
 }
-function updDots(){const st=[!!ans.q1,!!ans.q2,!!ans.q3,!!ans.q4,ans.q5.length>0,ans.q6.length>0,!!ans.q7,true];st.forEach((v,i)=>{const d=document.getElementById('sqd'+i);if(d)d.classList.toggle('done',v);});}
+function updDots(){const st=[!!ans.qloc,!!ans.q1,!!ans.q2,!!ans.q3,!!ans.q4,ans.q5.length>0,ans.q6.length>0,!!ans.q7,true];st.forEach((v,i)=>{const d=document.getElementById('sqd'+i);if(d)d.classList.toggle('done',v);});}
 
 // ═══════ ADMIN ═══════
 function resetDefaults(){
@@ -1208,19 +1104,18 @@ function resetDefaults(){
   document.getElementById('cfg-name').value='3DxVERSE — Aadorp Local Digital Twin';
   document.getElementById('cfg-col').value='#1F4E79'; applyColour('#1F4E79');
   document.getElementById('cfg-site').value='Aadorp';
-  document.getElementById('cfg-pfx').value='AAD';
   document.getElementById('logo-prev').innerHTML='';
 }
 function applyColour(h){document.documentElement.style.setProperty('--primary',h);}
 function prevLogo(inp){if(!inp.files[0])return;const u=URL.createObjectURL(inp.files[0]);document.getElementById('logo-prev').innerHTML=`<img src="${u}" style="max-width:200px;max-height:60px;border-radius:4px">`;}
 function exportCfg(){
-  const cfg={name:document.getElementById('cfg-name').value,colour:document.getElementById('cfg-col').value,site:document.getElementById('cfg-site').value,prefix:document.getElementById('cfg-pfx').value,exported:new Date().toISOString()};
+  const cfg={name:document.getElementById('cfg-name').value,colour:document.getElementById('cfg-col').value,site:document.getElementById('cfg-site').value,exported:new Date().toISOString()};
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(cfg,null,2)],{type:'application/json'}));a.download='3dxverse-aadorp-config.json';a.click();
 }
 function importCfg(inp){
   if(!inp.files[0])return;
   const r=new FileReader();
-  r.onload=e=>{try{const c=JSON.parse(e.target.result);if(c.name)document.getElementById('cfg-name').value=c.name;if(c.colour){document.getElementById('cfg-col').value=c.colour;applyColour(c.colour);}if(c.site)document.getElementById('cfg-site').value=c.site;if(c.prefix)document.getElementById('cfg-pfx').value=c.prefix;alert(lang==='nl' ? 'Configuratie geimporteerd.' : 'Config imported.');}catch{alert(lang==='nl' ? 'Fout bij lezen van configuratie.' : 'Error reading config.');}};
+  r.onload=e=>{try{const c=JSON.parse(e.target.result);if(c.name)document.getElementById('cfg-name').value=c.name;if(c.colour){document.getElementById('cfg-col').value=c.colour;applyColour(c.colour);}if(c.site)document.getElementById('cfg-site').value=c.site;alert(lang==='nl' ? 'Configuratie geimporteerd.' : 'Config imported.');}catch{alert(lang==='nl' ? 'Fout bij lezen van configuratie.' : 'Error reading config.');}};
   r.readAsText(inp.files[0]);
 }
 
@@ -1271,9 +1166,8 @@ function doEmailReceipt(){
     'PARTICIPATION RECEIPT',
     '═══════════════════════════════',
     '',
-    `Receipt ID:           ${rid}`,
-    `Participation Token:  ${tok}`,
-    `Date:                 ${date}${time?' at '+time+' UTC':''}`,
+    `Receipt ID:  ${rid}`,
+    `Date:        ${date}${time?' at '+time+' UTC':''}`,
     '',
     'SECTION A — Data & Processing',
     '─────────────────────────────',
@@ -1287,8 +1181,6 @@ function doEmailReceipt(){
     `You agreed to the programme purposes on ${date}${time?' at '+time+' UTC':''}.`,
     '',
     'TO WITHDRAW YOUR AGREEMENT:',
-    '  • Scan your QR code',
-    '  • Visit ctregistry.3dxverse.eu/withdraw and enter your token',
     '  • Email privacy@3dxverse.eu',
     '  • Tell a programme worker',
     'We will stop processing within 3 working days.',
@@ -1299,156 +1191,6 @@ function doEmailReceipt(){
   ].join('\n');
   window.location.href=`mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
   closeModal('modal-email');
-}
-
-// ═══════ WALLET CARD ═══════
-function openWalletModal(mode){
-  walletCardMode=mode||'receipt';
-  const lead=document.querySelector('#modal-wallet .modal-lead');
-  if(lead){
-    if(walletCardMode==='token'){
-      lead.textContent=lang==='nl'
-        ? 'Uw deelname-referentiekaart — bewaar hem op uw apparaat. In productie kan dit direct naar Apple Wallet met een ondertekend .pkpass-bestand gaan.'
-        : 'Your participation reference card — save it to your device. In production this could open Apple Wallet directly with a signed .pkpass file.';
-    }else{
-      lead.textContent=lang==='nl'
-        ? 'Uw deelnamepas — bewaar hem op uw apparaat. In een live versie zou dit direct naar Apple Wallet kunnen openen.'
-        : 'Your participation pass card — save it to your device. In a deployed version this would open directly in Apple Wallet.';
-    }
-  }
-  openModal('modal-wallet');
-  setTimeout(renderWalletCard,120);
-}
-function _rrect(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-  ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-  ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-  ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
-  ctx.closePath();
-}
-function renderWalletCard(){
-  const canvas=document.getElementById('wallet-canvas');
-  if(!canvas) return;
-  const ctx=canvas.getContext('2d');
-  const W=640,H=366;
-  canvas.width=W; canvas.height=H;
-
-  // Background gradient
-  const grad=ctx.createLinearGradient(0,0,W,H);
-  grad.addColorStop(0,'#1a3a5c'); grad.addColorStop(0.55,'#1F4E79'); grad.addColorStop(1,'#0D7377');
-  _rrect(ctx,0,0,W,H,24); ctx.fillStyle=grad; ctx.fill();
-
-  // Shimmer overlay
-  const shimmer=ctx.createLinearGradient(0,0,W*0.55,H*0.45);
-  shimmer.addColorStop(0,'rgba(255,255,255,0.07)'); shimmer.addColorStop(1,'rgba(255,255,255,0)');
-  _rrect(ctx,0,0,W,H,24); ctx.fillStyle=shimmer; ctx.fill();
-
-  // Header label
-  ctx.fillStyle='rgba(255,255,255,0.55)';
-  ctx.font='700 16px system-ui,-apple-system,sans-serif';
-  ctx.fillText('3DXVERSE — AADORP DIGITAL TWIN',36,44);
-
-  // Pass type badge (top right)
-  ctx.fillStyle='rgba(255,255,255,0.11)';
-  _rrect(ctx,W-210,16,174,30,7); ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,0.55)';
-  ctx.font='600 12px system-ui,-apple-system,sans-serif';
-  ctx.textAlign='center'; ctx.fillText('PARTICIPATION PASS',W-123,36); ctx.textAlign='left';
-
-  // Divider
-  ctx.strokeStyle='rgba(255,255,255,0.14)'; ctx.lineWidth=1;
-  ctx.beginPath(); ctx.moveTo(36,62); ctx.lineTo(W-226,62); ctx.stroke();
-
-  const tokenMode=walletCardMode==='token';
-
-  // Title
-  ctx.fillStyle='#ffffff';
-  ctx.font='300 27px Georgia,"DM Serif Display",serif';
-  ctx.fillText(tokenMode?'Participation reference':'Participation Receipt',36,96);
-
-  // Reference code label
-  ctx.fillStyle='rgba(255,255,255,0.5)';
-  ctx.font='700 12px system-ui,-apple-system,sans-serif';
-  ctx.fillText('REFERENCE CODE',36,132);
-
-  // Token
-  ctx.fillStyle='#ffffff';
-  ctx.font='700 26px "DM Serif Display",Georgia,monospace';
-  ctx.fillText(tok||'AAD-001-XXXX-XXXX',36,164);
-
-  if(tokenMode){
-    const issued=new Date().toLocaleDateString(lang==='nl'?'nl-NL':'en-GB',{year:'numeric',month:'short',day:'numeric'});
-    ctx.fillStyle='rgba(255,255,255,0.5)';
-    ctx.font='700 12px system-ui,-apple-system,sans-serif';
-    ctx.fillText(lang==='nl'?'DATUM TOKEN':'TOKEN DATE',36,204);
-    ctx.fillStyle='#ffffff';
-    ctx.font='500 17px system-ui,-apple-system,sans-serif';
-    ctx.fillText(issued,36,226);
-    ctx.fillStyle='rgba(255,255,255,0.32)';
-    ctx.font='400 12px system-ui,-apple-system,sans-serif';
-    ctx.fillText(lang==='nl'?'Nog geen akkoord · scan QR om later te openen.':'No agreement logged yet · scan QR to open later.',36,266);
-    ctx.fillStyle='rgba(0,0,0,0.22)';
-    ctx.fillRect(0,H-50,W,50);
-    ctx.fillStyle='rgba(255,255,255,0.45)';
-    ctx.font='400 11px system-ui,-apple-system,sans-serif';
-    ctx.fillText('privacy@3dxverse.eu  ·  ctregistry.3dxverse.eu/retrieve/'+(tok||'XXXX'),36,H-20);
-  }else{
-    const date=receiptMeta?receiptMeta.date:new Date().toISOString().split('T')[0];
-    const time=receiptMeta?receiptMeta.time:'';
-    ctx.fillStyle='rgba(255,255,255,0.5)';
-    ctx.font='700 12px system-ui,-apple-system,sans-serif';
-    ctx.fillText('DATE AGREED',36,204);
-    ctx.fillStyle='#ffffff';
-    ctx.font='500 17px system-ui,-apple-system,sans-serif';
-    ctx.fillText(date+(time?'  '+time+' UTC':''),36,226);
-    const rid=(document.getElementById('r-id')||{}).textContent||'3DX-AAD-2026-XXXXXX';
-    ctx.fillStyle='rgba(255,255,255,0.32)';
-    ctx.font='400 12px system-ui,-apple-system,sans-serif';
-    ctx.fillText('Receipt: '+rid,36,266);
-    ctx.fillStyle='rgba(0,0,0,0.22)';
-    ctx.fillRect(0,H-50,W,50);
-    ctx.fillStyle='rgba(255,255,255,0.45)';
-    ctx.font='400 12px system-ui,-apple-system,sans-serif';
-    ctx.fillText('Withdraw: privacy@3dxverse.eu  ·  ctregistry.3dxverse.eu/withdraw',36,H-20);
-  }
-
-  // QR code (right column)
-  const QX=W-190,QY=68,QW=154,QH=154;
-  ctx.fillStyle='#ffffff'; _rrect(ctx,QX,QY,QW,QH,10); ctx.fill();
-  const qrImg=document.querySelector('#qr-wrap img')||document.querySelector('#qr-wrap canvas');
-  if(qrImg){
-    try{ctx.drawImage(qrImg,QX+8,QY+8,QW-16,QH-16);}catch(e){}
-  } else {
-    ctx.fillStyle='rgba(31,78,121,0.18)'; _rrect(ctx,QX,QY,QW,QH,10); ctx.fill();
-    ctx.fillStyle='rgba(31,78,121,0.5)'; ctx.font='600 13px system-ui';
-    ctx.textAlign='center'; ctx.fillText('QR Code',QX+QW/2,QY+QH/2+5); ctx.textAlign='left';
-  }
-  ctx.fillStyle='rgba(255,255,255,0.42)';
-  ctx.font='400 11px system-ui,-apple-system,sans-serif';
-  ctx.textAlign='center'; ctx.fillText(tokenMode?'Scan to retrieve':'Scan to verify',QX+QW/2,QY+QH+18); ctx.textAlign='left';
-
-  // EU badge
-  ctx.fillStyle='rgba(255,255,255,0.09)';
-  _rrect(ctx,QX,QY+QH+28,QW,24,5); ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,0.4)';
-  ctx.font='600 10px system-ui,-apple-system,sans-serif';
-  ctx.textAlign='center'; ctx.fillText('EU DIGITAL Europe No. 101168258',QX+QW/2,QY+QH+44); ctx.textAlign='left';
-
-  // Show preview
-  const previewImg=new Image();
-  previewImg.src=canvas.toDataURL('image/png');
-  previewImg.style.cssText='width:100%;max-width:380px;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.25);display:block;margin:0 auto';
-  const wrap=document.getElementById('wallet-preview-img');
-  if(wrap){wrap.innerHTML=''; wrap.appendChild(previewImg);}
-}
-function downloadWalletCard(){
-  const canvas=document.getElementById('wallet-canvas');
-  if(!canvas||canvas.width===0) return;
-  const a=document.createElement('a');
-  a.href=canvas.toDataURL('image/png');
-  a.download=(walletCardMode==='token'?'3DxVERSE-Ref-':'3DxVERSE-Pass-')+(tok||'receipt')+'.png';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
 </script>
